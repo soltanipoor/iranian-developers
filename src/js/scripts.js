@@ -4,7 +4,7 @@ $.getJSON("developers.json", function (json) {
         // console.log(item.github_username);
 
         let avatar = "https://avatars2.githubusercontent.com/u/16510392?v=4";
-        if (item.github_username.length = 0) {
+        if (!item.github_username) {
             avatar = "https://avatars2.githubusercontent.com/u/16510392?v=4";
             not_github_count++;
             item.github_username = "NOT_" + not_github_count;
@@ -19,11 +19,11 @@ $.getJSON("developers.json", function (json) {
                 .catch(err => console.log(err));
         }
 
-        if (item.resume_url.length = 0) {
+        if (!item.resume_url) {
             item.resume_url = "#";
         }
 
-        if (item.personal_url.length = 0) {
+        if (!item.personal_url) {
             item.personal_url = "#";
         }
 
